@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" role="img" aria-labelledby="title desc">
+  <title id="title">Binta Nwosu portrait placeholder</title>
+  <desc id="desc">Stylized placeholder portrait for Binta Nwosu</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#241f62"/>
+      <stop offset="100%" stop-color="#1284bf"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="720" rx="36" fill="url(#bg)"/>
+  <circle cx="300" cy="250" r="104" fill="rgba(255,255,255,0.18)"/>
+  <path d="M150 612c26-118 110-178 150-178s124 60 150 178" fill="rgba(255,255,255,0.16)"/>
+  <text x="300" y="666" text-anchor="middle" fill="#fff" font-size="76" font-family="Georgia, serif" font-weight="700">BN</text>
+</svg>
