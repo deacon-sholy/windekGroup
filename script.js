@@ -215,12 +215,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== CONTACT FORM VALIDATION =====
   const form = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
+  const formNextUrl = document.getElementById('formNextUrl');
+  const formSuccessModal = document.getElementById('formSuccessModal');
+
+  if (formNextUrl) {
+    formNextUrl.value = `${window.location.origin}${window.location.pathname}?submitted=1`;
+  }
+
+  handleSuccessfulSubmission();
 
   if (form) {
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (validateForm()) {
-        simulateFormSubmit();
+      if (!validateForm()) {
+        e.preventDefault();
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) {
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
       }
     });
 
@@ -296,21 +310,16 @@ document.addEventListener('DOMContentLoaded', () => {
     if (errEl) errEl.textContent = '';
   }
 
-  function simulateFormSubmit() {
-    const submitBtn = form.querySelector('button[type="submit"]');
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
+  function handleSuccessfulSubmission() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('submitted') !== '1' || !formSuccessModal) return;
+
+    formSuccessModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 
     setTimeout(() => {
-      form.reset();
-      formSuccess.classList.add('visible');
-      submitBtn.textContent = 'Send Message →';
-      submitBtn.disabled = false;
-
-      setTimeout(() => {
-        formSuccess.classList.remove('visible');
-      }, 6000);
-    }, 1800);
+      window.location.replace(`${window.location.pathname}#home`);
+    }, 3000);
   }
 
   // ===== HERO PARALLAX =====
