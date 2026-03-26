@@ -147,6 +147,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // ===== HERO SLIDER =====
+  const heroSliderTrack = document.getElementById('heroSliderTrack');
+  const heroSlides = document.querySelectorAll('.hero-slide');
+  const heroDots = document.querySelectorAll('.hero-slider__dot');
+  const heroPrev = document.getElementById('heroPrev');
+  const heroNext = document.getElementById('heroNext');
+  let heroSlideIndex = 0;
+  let heroSliderTimer;
+
+  function setHeroSlide(index) {
+    if (!heroSliderTrack || !heroSlides.length) return;
+
+    heroSlideIndex = (index + heroSlides.length) % heroSlides.length;
+    heroSliderTrack.style.transform = `translateX(-${heroSlideIndex * 100}%)`;
+
+    heroSlides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === heroSlideIndex);
+    });
+
+    heroDots.forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === heroSlideIndex);
+      dot.setAttribute('aria-current', idx === heroSlideIndex ? 'true' : 'false');
+    });
+  }
+
+  function startHeroSlider() {
+    if (!heroSlides.length) return;
+    clearInterval(heroSliderTimer);
+    heroSliderTimer = setInterval(() => {
+      setHeroSlide(heroSlideIndex + 1);
+    }, 5500);
+  }
+
+  if (heroSlides.length) {
+    setHeroSlide(0);
+    startHeroSlider();
+
+    heroPrev?.addEventListener('click', () => {
+      setHeroSlide(heroSlideIndex - 1);
+      startHeroSlider();
+    });
+
+    heroNext?.addEventListener('click', () => {
+      setHeroSlide(heroSlideIndex + 1);
+      startHeroSlider();
+    });
+
+    heroDots.forEach(dot => {
+      dot.addEventListener('click', () => {
+        setHeroSlide(parseInt(dot.getAttribute('data-slide'), 10));
+        startHeroSlider();
+      });
+    });
+  }
+
   // ===== PROJECT FILTER =====
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card');

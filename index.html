@@ -40,58 +40,93 @@
   <main>
 
     <!-- ===== HERO ===== -->
-    <section class="hero" id="home">
+    <section class="subsidiary-slider" id="home">
       <div class="hero-bg-grid"></div>
       <div class="hero-beam hero-beam--1"></div>
       <div class="hero-beam hero-beam--2"></div>
       <div class="hero-orb hero-orb--1"></div>
       <div class="hero-orb hero-orb--2"></div>
       <div class="hero-container">
-        <div class="hero-badge reveal-fade">Nigeria's Diversified Industrial Leader</div>
-        <h1 class="hero-headline reveal-up">
-          Delivering <span class="accent-text">Infrastructure,</span><br/>
-          Energy &amp; Supply Chain<br/>
-          <span class="outline-text">Excellence</span>
-        </h1>
-        <p class="hero-sub reveal-up delay-1">Windek Group drives national development through integrated solutions across Energy, Procurement, Logistics, and Food Distribution — building the backbone of Nigeria's industrial future.</p>
-        <div class="hero-actions reveal-up delay-2">
-          <a href="#subsidiaries" class="btn btn--primary">Explore Our Subsidiaries</a>
-          <a href="#investors" class="btn btn--ghost">Investor Relations</a>
+        <div class="hero-slider__viewport reveal-up" aria-label="Windek Group subsidiaries slider">
+          <div class="hero-slider__track" id="heroSliderTrack">
+            <article class="hero-slide hero-slide--oil active" data-slide="0">
+              <img src="img/slide-oil.svg" alt="Oil and gas infrastructure background" class="hero-slide__bg" />
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">Premium Indigenous Energy</span>
+                <h2><span>Fueling Reliable</span><span class="hero-slide__title-accent">Gas Infrastructure.</span></h2>
+                <p>Windek Oil &amp; Gas delivers LPG systems, gas distribution, and industrial energy support.</p>
+                <div class="hero-slide__actions">
+                  <a href="https://www.windekoilandgasltd.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visit Website</a>
+                  <a href="#subsidiaries" class="btn btn--ghost">View Subsidiaries</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero-slide hero-slide--energy" data-slide="1">
+              <img src="img/slide-energy.svg" alt="Energy operations background" class="hero-slide__bg" />
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">Smart Energy Delivery</span>
+                <h2><span>Driving Modern</span><span class="hero-slide__title-accent">Energy Solutions.</span></h2>
+                <p>Windek Energy supports strategic projects with practical, innovation-led execution.</p>
+                <div class="hero-slide__actions">
+                  <a href="https://www.windekenergy.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visit Website</a>
+                  <a href="#subsidiaries" class="btn btn--ghost">View Subsidiaries</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero-slide hero-slide--procurement" data-slide="2">
+              <img src="img/slide-procurement.svg" alt="Procurement operations background" class="hero-slide__bg" />
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">Procurement Excellence</span>
+                <h2><span>Securing Value.</span><span class="hero-slide__title-accent">Delivering Scale.</span></h2>
+                <p>Windek Procurement handles sourcing, EPC support, and contract execution with confidence.</p>
+                <div class="hero-slide__actions">
+                  <a href="https://www.windekprocurement.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visit Website</a>
+                  <a href="#subsidiaries" class="btn btn--ghost">View Subsidiaries</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero-slide hero-slide--logistics" data-slide="3">
+              <img src="img/slide-logistics.svg" alt="Logistics operations background" class="hero-slide__bg" />
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">Supply Chain Movement</span>
+                <h2><span>Moving Goods.</span><span class="hero-slide__title-accent">Powering Operations.</span></h2>
+                <p>Coastal Crest Energy coordinates warehousing, transport, and supply chain flow.</p>
+                <div class="hero-slide__actions">
+                  <a href="https://www.coastalcrestenergyltd.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visit Website</a>
+                  <a href="#subsidiaries" class="btn btn--ghost">View Subsidiaries</a>
+                </div>
+              </div>
+            </article>
+
+            <article class="hero-slide hero-slide--fisheries" data-slide="4">
+              <img src="img/slide-fisheries.svg" alt="Fisheries distribution background" class="hero-slide__bg" />
+              <div class="hero-slide__content">
+                <span class="hero-slide__tag">Cold Chain Distribution</span>
+                <h2><span>Supplying Quality.</span><span class="hero-slide__title-accent">Serving Demand.</span></h2>
+                <p>Windek Fisheries supports institutional and commercial buyers with reliable food distribution.</p>
+                <div class="hero-slide__actions">
+                  <a href="https://windekfisheries.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visit Website</a>
+                  <a href="#subsidiaries" class="btn btn--ghost">View Subsidiaries</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="hero-slider__controls">
+            <button class="hero-slider__arrow" id="heroPrev" type="button" aria-label="Previous slide">&#8249;</button>
+            <div class="hero-slider__dots" id="heroSliderDots" aria-label="Slider navigation">
+              <button class="hero-slider__dot active" type="button" aria-label="Go to slide 1" data-slide="0"></button>
+              <button class="hero-slider__dot" type="button" aria-label="Go to slide 2" data-slide="1"></button>
+              <button class="hero-slider__dot" type="button" aria-label="Go to slide 3" data-slide="2"></button>
+              <button class="hero-slider__dot" type="button" aria-label="Go to slide 4" data-slide="3"></button>
+              <button class="hero-slider__dot" type="button" aria-label="Go to slide 5" data-slide="4"></button>
+            </div>
+            <button class="hero-slider__arrow" id="heroNext" type="button" aria-label="Next slide">&#8250;</button>
+          </div>
         </div>
-        <div class="hero-stats reveal-up delay-3">
-          <div class="hero-stat">
-            <span class="hero-stat__eyebrow">Oil &amp; Gas</span>
-            <div class="hero-stat__value">
-              <span class="hero-stat__num" data-target="20000">0</span><span class="hero-stat__unit">MT</span>
-            </div>
-            <span class="hero-stat__label">LPG Storage Capacity</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat__eyebrow">Reach</span>
-            <div class="hero-stat__value">
-              <span class="hero-stat__num" data-target="36">0</span><span class="hero-stat__unit">+</span>
-            </div>
-            <span class="hero-stat__label">States Served</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat__eyebrow">Structure</span>
-            <div class="hero-stat__value">
-              <span class="hero-stat__num" data-target="5">0</span><span class="hero-stat__unit"></span>
-            </div>
-            <span class="hero-stat__label">Core Subsidiaries</span>
-          </div>
-          <div class="hero-stat">
-            <span class="hero-stat__eyebrow">Legacy</span>
-            <div class="hero-stat__value">
-              <span class="hero-stat__num" data-target="15">0</span><span class="hero-stat__unit">+</span>
-            </div>
-            <span class="hero-stat__label">Years of Excellence</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-scroll-indicator">
-        <span>Scroll</span>
-        <div class="scroll-line"></div>
       </div>
     </section>
 

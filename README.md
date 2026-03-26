@@ -1,6 +1,6 @@
 # Windek Group Website
 
-This project is a static corporate website built for Windek Group.
+This project is a static corporate website built for Windek Group Limited.
 
 It presents the company's brand, subsidiaries, leadership team, investor positioning, contact details, and supporting business information in a modern responsive layout.
 

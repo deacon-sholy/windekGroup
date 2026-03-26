@@ -1,0 +1,15 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#111B33"/>
+  <rect y="650" width="1600" height="250" fill="#151F39"/>
+  <circle cx="1260" cy="170" r="170" fill="#F6B241" fill-opacity="0.16"/>
+  <rect x="960" y="170" width="360" height="470" rx="28" fill="#F2F4F8"/>
+  <rect x="1005" y="245" width="210" height="22" rx="11" fill="#D9DFEA"/>
+  <rect x="1005" y="305" width="260" height="18" rx="9" fill="#E2E6EF"/>
+  <rect x="1005" y="347" width="230" height="18" rx="9" fill="#E2E6EF"/>
+  <rect x="1005" y="389" width="250" height="18" rx="9" fill="#E2E6EF"/>
+  <rect x="1005" y="468" width="120" height="110" rx="16" fill="#20365C"/>
+  <rect x="1140" y="468" width="135" height="24" rx="12" fill="#D9DFEA"/>
+  <rect x="1140" y="510" width="115" height="18" rx="9" fill="#E2E6EF"/>
+  <rect x="1140" y="545" width="90" height="18" rx="9" fill="#E2E6EF"/>
+  <path d="M0 745C150 705 300 700 445 744C597 791 740 793 887 749C1056 698 1219 700 1370 742C1455 765 1532 776 1600 773V900H0V745Z" fill="#1A2748"/>
+</svg>
