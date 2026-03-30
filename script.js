@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== HERO PARALLAX =====
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.subsidiary-slider');
   if (hero) {
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
@@ -394,6 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Make closeModal globally accessible
 function closeModal() {
   const modal = document.getElementById('projectModal');
+  if (!modal) return;
   modal.classList.remove('active');
   document.body.style.overflow = '';
 }
