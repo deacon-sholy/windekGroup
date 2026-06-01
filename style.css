@@ -49,6 +49,18 @@ img, svg {
 
 /* ===== UTILS ===== */
 .container { max-width: 1220px; margin: 0 auto; padding: 0 24px; }
+.section.section--spaced { padding-top: 120px; }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 .section { padding: 100px 0; }
 .section-label {
   display: inline-block;
@@ -1119,8 +1131,13 @@ img, svg {
   cursor: pointer;
 }
 .doc-btn:hover { background: rgba(244,123,32,0.15); border-color: var(--orange); transform: translateY(-3px); }
+.doc-btn:disabled, .social-link:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+  transform: none;
+}
 .doc-icon { font-size: 1.8rem; flex-shrink: 0; }
-.doc-btn div { display: flex; flex-direction: column; flex: 1; }
+.doc-btn__content { display: flex; flex-direction: column; flex: 1; }
 .doc-btn strong { font-size: 0.85rem; color: var(--white); font-weight: 600; }
 .doc-btn span { font-size: 0.72rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
 .doc-dl { font-size: 0.78rem; color: var(--orange); font-weight: 600; flex-shrink: 0; white-space: nowrap; }
@@ -1269,7 +1286,12 @@ img, svg {
   transition: color 0.25s ease;
 }
 .contact-detail a:hover { color: var(--white); }
-.map-embed iframe { border-radius: var(--radius); }
+.map-embed iframe {
+  width: 100%;
+  height: 200px;
+  border: 0;
+  border-radius: var(--radius);
+}
 .contact-form-wrap {
   background: var(--white);
   border-radius: var(--radius);

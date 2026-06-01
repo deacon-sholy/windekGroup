@@ -1,2 +1,7 @@
 DirectoryIndex index.html
 Options -Indexes
+AddDefaultCharset UTF-8
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+Sitemap: https://windekgroup.com/sitemap.xml
