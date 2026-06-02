@@ -68,6 +68,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" >
+  <style>
+    :root{--primary:#302b81;--primary-dark:#241f62;--primary-light:#4b44a4;--secondary:#1284bf;--secondary-light:#2ea3df;--secondary-dark:#0d6998;--navy:var(--primary-dark);--navy-mid:var(--primary);--navy-light:var(--primary-light);--orange:var(--secondary);--orange-light:var(--secondary-light);--orange-dark:var(--secondary-dark);--white:#FFFFFF;--off-white:#F5F7FA;--grey-light:#E8EDF4;--grey:#6B7280;--text-body:#374151;--text-dark:var(--primary-dark);--font-display:'Playfair Display', Georgia, serif;--font-body:'Manrope', -apple-system, sans-serif;--radius:12px;--radius-sm:6px;--shadow:0 8px 32px rgba(36,31,98,0.10);--shadow-lg:0 20px 60px rgba(36,31,98,0.18);--transition:all 0.35s cubic-bezier(0.4, 0, 0.2, 1)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-body);color:var(--text-body);background:var(--white);overflow-x:hidden;line-height:1.7}img,svg{max-width:100%;height:auto}.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:transparent;transition:background 0.4s ease, box-shadow 0.4s ease, padding 0.4s ease;padding:8px 0}.navbar.scrolled{background:rgba(11,31,58,0.97);backdrop-filter:blur(12px);box-shadow:0 2px 24px rgba(0,0,0,0.22);padding:4px 0}.nav-container{max-width:1220px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:70px}.nav-logo{display:flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:18px;background:rgba(255,255,255,0.96);box-shadow:0 10px 30px rgba(8,16,38,0.18);text-decoration:none}.brand-logo-image{display:block;width:auto;height:50px;object-fit:contain}.subsidiary-slider{min-height:78vh;background:linear-gradient(180deg,#071126 0%,#0b1b3f 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:104px 0 48px}.hero-slider__track{display:flex;transition:transform 0.65s ease;will-change:transform}.hero-slide{min-width:100%;display:flex;align-items:flex-end;min-height:56vh;padding:34px;border-radius:30px;border:1px solid rgba(255,255,255,0.12);box-shadow:0 34px 90px rgba(4, 10, 25, 0.38);position:relative;overflow:hidden}.hero-slide h2{font-family:var(--font-display);font-size:clamp(2.4rem, 5.4vw, 4.5rem);color:var(--white);line-height:0.98;margin-bottom:18px;max-width:11ch;letter-spacing:-0.04em}
+  </style>
   <link rel="stylesheet" href="style.min.css" >
 </head>
 <body>
@@ -76,7 +79,7 @@
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo">
-        <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" fetchpriority="high" decoding="async" >
+        <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" fetchpriority="high" decoding="async" width="150" height="50" >
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#home" class="nav-link active">Home</a>
@@ -107,7 +110,7 @@
         <section class="hero-slider__viewport reveal-up" aria-label="Windek Group subsidiaries slider">
           <div class="hero-slider__track" id="heroSliderTrack">
             <article class="hero-slide hero-slide--oil active" data-slide="0">
-              <img src="img/slide-oil.svg" alt="Oil and gas infrastructure background" class="hero-slide__bg" fetchpriority="high" decoding="async" >
+              <img src="img/slide-oil.svg" alt="Oil and gas infrastructure background" class="hero-slide__bg" fetchpriority="high" decoding="async" width="800" height="600" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Premium Indigenous Energy</span>
                 <h2><span>Fueling Reliable</span><span class="hero-slide__title-accent">Gas Infrastructure.</span></h2>
@@ -120,7 +123,7 @@
             </article>
 
             <article class="hero-slide hero-slide--energy" data-slide="1">
-              <img src="img/slide-energy.svg" alt="Energy operations background" class="hero-slide__bg" loading="lazy" decoding="async" >
+              <img src="img/slide-energy.svg" alt="Energy operations background" class="hero-slide__bg" loading="lazy" decoding="async" width="800" height="600" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Smart Energy Delivery</span>
                 <h2><span>Driving Modern</span><span class="hero-slide__title-accent">Energy Solutions.</span></h2>
@@ -133,7 +136,7 @@
             </article>
 
             <article class="hero-slide hero-slide--procurement" data-slide="2">
-              <img src="img/slide-procurement.svg" alt="Procurement operations background" class="hero-slide__bg" loading="lazy" decoding="async" >
+              <img src="img/slide-procurement.svg" alt="Procurement operations background" class="hero-slide__bg" loading="lazy" decoding="async" width="800" height="600" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Procurement Excellence</span>
                 <h2><span>Securing Value.</span><span class="hero-slide__title-accent">Delivering Scale.</span></h2>
@@ -146,7 +149,7 @@
             </article>
 
             <article class="hero-slide hero-slide--logistics" data-slide="3">
-              <img src="img/slide-logistics.svg" alt="Logistics operations background" class="hero-slide__bg" loading="lazy" decoding="async" >
+              <img src="img/slide-logistics.svg" alt="Logistics operations background" class="hero-slide__bg" loading="lazy" decoding="async" width="800" height="600" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Supply Chain Movement</span>
                 <h2><span>Moving Goods.</span><span class="hero-slide__title-accent">Powering Operations.</span></h2>
@@ -159,7 +162,7 @@
             </article>
 
             <article class="hero-slide hero-slide--fisheries" data-slide="4">
-              <img src="img/slide-fisheries.svg" alt="Fisheries distribution background" class="hero-slide__bg" loading="lazy" decoding="async" >
+              <img src="img/slide-fisheries.svg" alt="Fisheries distribution background" class="hero-slide__bg" loading="lazy" decoding="async" width="800" height="600" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Cold Chain Distribution</span>
                 <h2><span>Supplying Quality.</span><span class="hero-slide__title-accent">Serving Demand.</span></h2>
@@ -249,11 +252,11 @@
 
             <div class="vm-row">
               <div class="vm-card">
-                <h4>Our Vision</h4>
+                <h3>Our Vision</h3>
                 <p>To be West Africa's most trusted and diversified industrial conglomerate, driving sustainable development through world-class infrastructure and services.</p>
               </div>
               <div class="vm-card">
-                <h4>Our Mission</h4>
+                <h3>Our Mission</h3>
                 <p>Delivering integrated industrial solutions that accelerate national growth, empower communities, and create long-term stakeholder value.</p>
               </div>
             </div>
@@ -737,7 +740,7 @@
         <div class="team-grid reveal-up">
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/Emma.jpg" alt="Portrait of Emmanuel Uwandu" class="team-card__image" loading="lazy" decoding="async" >
+              <img src="img/Emma.jpg" alt="Portrait of Emmanuel Uwandu" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
             </div>
             <h3>Emmanuel Uwandu</h3>
             <span class="team-card__role">Chief Operating Officer</span>
@@ -745,7 +748,7 @@
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/joy.jpg" alt="Portrait of Joy Makanjuola" class="team-card__image" loading="lazy" decoding="async" >
+              <img src="img/joy.jpg" alt="Portrait of Joy Makanjuola" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
             </div>
             <h3>Joy Makanjuola</h3>
             <span class="team-card__role">Head of Human Resources</span>
@@ -753,7 +756,7 @@
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/dorcas.jpg" alt="Portrait of Dorcas Oloniyo" class="team-card__image" loading="lazy" decoding="async" >
+              <img src="img/dorcas.jpg" alt="Portrait of Dorcas Oloniyo" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
             </div>
             <h3>Dorcas Oloniyo</h3>
             <span class="team-card__role">Head of Account</span>
@@ -761,7 +764,7 @@
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/motun.jpg" alt="Portrait of Motunrayo Adeogun" class="team-card__image" loading="lazy" decoding="async" >
+              <img src="img/motun.jpg" alt="Portrait of Motunrayo Adeogun" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
             </div>
             <h3>Motunrayo Adeogun</h3>
             <span class="team-card__role">Head of Business Development (Oil &amp; Gas)</span>
@@ -769,7 +772,7 @@
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/joyce.jpg" alt="Portrait of Joyce Sunmoye" class="team-card__image" loading="lazy" decoding="async" >
+              <img src="img/joyce.jpg" alt="Portrait of Joyce Sunmoye" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
             </div>
             <h3>Joyce Sunmoye</h3>
             <span class="team-card__role">Head of Business &amp; Contracts (Windek Fisheries/Procurement)</span>
@@ -778,7 +781,7 @@
           <!--
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/team-tunde-salami.svg" alt="Portrait of Tunde Salami" class="team-card__image" >
+              <img src="img/team-tunde-salami.svg" alt="Portrait of Tunde Salami" class="team-card__image" width="300" height="320" >
             </div>
             <h3>Tunde Salami</h3>
             <span class="team-card__role">Operations Director</span>
@@ -898,7 +901,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#home" class="nav-logo footer-logo">
-            <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" loading="lazy" decoding="async" >
+            <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" loading="lazy" decoding="async" width="150" height="50" >
           </a>
           <p>Delivering Infrastructure, Energy &amp; Supply Chain Excellence across Nigeria and West Africa.</p>
           <div class="footer-socials">
