@@ -2,6 +2,10 @@
    WINDEK GROUP — script.js
    =========================== */
 
+document.querySelectorAll('link[data-deferred-style]').forEach(link => {
+  link.media = 'all';
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ===== NAVBAR SCROLL BEHAVIOR =====
@@ -9,30 +13,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.getElementById('navLinks');
   const hamburger = document.getElementById('hamburger');
   const backToTop = document.getElementById('backToTop');
-  let lastScroll = 0;
+  const sectionIds = ['home', 'about', 'subsidiaries', 'projects', 'industries', 'investors', 'contact'];
+  const sections = sectionIds
+    .map(id => ({ id, section: document.getElementById(id), link: document.querySelector(`.nav-link[href="#${id}"]`) }))
+    .filter(item => item.section && item.link);
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hero = document.querySelector('.subsidiary-slider');
+  const orb1 = document.querySelector('.hero-orb--1');
+  const orb2 = document.querySelector('.hero-orb--2');
+  const enableHeroParallax = hero && orb1 && orb2 && !reduceMotion && window.matchMedia('(min-width: 701px)').matches;
+  let scrollTicking = false;
 
-  window.addEventListener('scroll', () => {
+  function updateOnScroll() {
     const scrollY = window.scrollY;
 
-    // Sticky + scrolled state
-    if (scrollY > 60) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
+    navbar?.classList.toggle('scrolled', scrollY > 60);
+    backToTop?.classList.toggle('visible', scrollY > 400);
+    highlightActiveNav(scrollY);
+
+    if (enableHeroParallax && scrollY < hero.offsetHeight + 160) {
+      orb1.style.transform = `translateY(${scrollY * 0.15}px)`;
+      orb2.style.transform = `translateY(${scrollY * 0.08}px)`;
     }
 
-    // Back to top visibility
-    if (scrollY > 400) {
-      backToTop.classList.add('visible');
-    } else {
-      backToTop.classList.remove('visible');
-    }
+    scrollTicking = false;
+  }
 
-    // Active nav link based on section
-    highlightActiveNav();
-
-    lastScroll = scrollY;
-  });
+  window.addEventListener('scroll', () => {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(updateOnScroll);
+  }, { passive: true });
+  updateOnScroll();
 
   // ===== HAMBURGER MENU =====
   if (hamburger && navLinks) {
@@ -52,21 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== ACTIVE NAV LINK =====
-  function highlightActiveNav() {
-    const sections = ['home', 'about', 'subsidiaries', 'projects', 'industries', 'investors', 'contact'];
-    const scrollPos = window.scrollY + 120;
+  function highlightActiveNav(scrollY = window.scrollY) {
+    const scrollPos = scrollY + 120;
 
-    sections.forEach(id => {
-      const section = document.getElementById(id);
-      if (!section) return;
+    sections.forEach(({ section, link }) => {
       const top = section.offsetTop;
       const bottom = top + section.offsetHeight;
-      const link = document.querySelector(`.nav-link[href="#${id}"]`);
-      if (link) {
-        if (scrollPos >= top && scrollPos < bottom) {
-          document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-        }
+      if (scrollPos >= top && scrollPos < bottom) {
+        sections.forEach(item => item.link.classList.remove('active'));
+        link.classList.add('active');
       }
     });
   }
@@ -96,23 +102,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== SCROLL REVEAL ANIMATIONS =====
   const revealElements = document.querySelectorAll('.reveal-fade, .reveal-up, .reveal-left, .reveal-right');
 
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  if ('IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
 
-  revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => revealObserver.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add('visible'));
+  }
 
   // ===== ANIMATED COUNTERS =====
   const counters = document.querySelectorAll('.hero-stat__num[data-target]');
   let countersStarted = false;
 
-  const countObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting && !countersStarted) {
+  const startCounters = () => {
+    if (!countersStarted) {
       countersStarted = true;
       counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-target'));
@@ -132,10 +142,17 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(update);
       });
     }
-  }, { threshold: 0.5 });
+  };
 
   const heroStats = document.querySelector('.hero-stats');
-  if (heroStats) countObserver.observe(heroStats);
+  if (heroStats && 'IntersectionObserver' in window) {
+    const countObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) startCounters();
+    }, { threshold: 0.5 });
+    countObserver.observe(heroStats);
+  } else {
+    startCounters();
+  }
 
   // ===== DIVISIONS TAB NAVIGATION =====
   const tabBtns = document.querySelectorAll('.tab-btn');
@@ -162,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroNext = document.getElementById('heroNext');
   let heroSlideIndex = 0;
   let heroSliderTimer;
+  let heroSliderVisible = true;
 
   function setHeroSlide(index) {
     if (!heroSliderTrack || !heroSlides.length) return;
@@ -180,16 +198,41 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function startHeroSlider() {
-    if (!heroSlides.length) return;
+    if (!heroSlides.length || reduceMotion || !heroSliderVisible || document.hidden) return;
     clearInterval(heroSliderTimer);
     heroSliderTimer = setInterval(() => {
       setHeroSlide(heroSlideIndex + 1);
     }, 5500);
   }
 
+  function stopHeroSlider() {
+    clearInterval(heroSliderTimer);
+  }
+
   if (heroSlides.length) {
     setHeroSlide(0);
-    startHeroSlider();
+
+    if ('IntersectionObserver' in window) {
+      const sliderObserver = new IntersectionObserver((entries) => {
+        heroSliderVisible = entries[0].isIntersecting;
+        if (heroSliderVisible) {
+          startHeroSlider();
+        } else {
+          stopHeroSlider();
+        }
+      }, { threshold: 0.25 });
+      sliderObserver.observe(heroSliderTrack);
+    } else {
+      startHeroSlider();
+    }
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopHeroSlider();
+      } else {
+        startHeroSlider();
+      }
+    });
 
     heroPrev?.addEventListener('click', () => {
       setHeroSlide(heroSlideIndex - 1);
@@ -392,18 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
       window.location.replace(`${window.location.pathname}#home`);
     }, 3000);
-  }
-
-  // ===== HERO PARALLAX =====
-  const hero = document.querySelector('.subsidiary-slider');
-  if (hero) {
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const orb1 = document.querySelector('.hero-orb--1');
-      const orb2 = document.querySelector('.hero-orb--2');
-      if (orb1) orb1.style.transform = `translateY(${scrollY * 0.15}px)`;
-      if (orb2) orb2.style.transform = `translateY(${scrollY * 0.08}px)`;
-    });
   }
 
 });

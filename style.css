@@ -62,6 +62,12 @@ img, svg {
   border: 0;
 }
 .section { padding: 100px 0; }
+.section,
+.cta-banner,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
+}
 .section-label {
   display: inline-block;
   font-size: 0.72rem;
@@ -347,7 +353,7 @@ img, svg {
   line-height: 0.98;
   margin-bottom: 18px;
   max-width: 11ch;
-  letter-spacing: -0.04em;
+  letter-spacing: 0;
 }
 .hero-slide h2 span {
   display: block;
@@ -1529,6 +1535,17 @@ img, svg {
   .nav-link.nav-cta { text-align: center; margin: 4px 0 0; }
   .hamburger { display: flex; }
   .subsidiary-slider { padding: 126px 0 46px; }
+  .hero-bg-grid,
+  .hero-beam,
+  .hero-orb {
+    display: none;
+  }
+  .hero-slider__track {
+    will-change: auto;
+  }
+  .hero-slide {
+    box-shadow: 0 18px 44px rgba(4, 10, 25, 0.28);
+  }
   .hero-badge { font-size: 0.68rem; letter-spacing: 0.08em; padding: 8px 14px; margin-bottom: 20px; }
   .hero-headline { font-size: 2.4rem; }
   .hero-sub { font-size: 0.98rem; margin-bottom: 28px; }
@@ -1615,4 +1632,15 @@ img, svg {
   .footer-brand .nav-logo { padding: 5px 8px; }
   .footer-logo .brand-logo-image { height: 56px; }
   .back-to-top { right: 16px; bottom: 16px; width: 42px; height: 42px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
