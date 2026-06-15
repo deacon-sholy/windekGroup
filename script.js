@@ -118,38 +118,45 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== ANIMATED COUNTERS =====
-  const counters = document.querySelectorAll('.hero-stat__num[data-target]');
-  let countersStarted = false;
+  const allCounters = document.querySelectorAll('.stat-counter[data-target], .hero-stat__num[data-target]');
+  let countersStarted = new Set();
 
-  const startCounters = () => {
-    if (!countersStarted) {
-      countersStarted = true;
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-target'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
+  const startCounters = (container) => {
+    const counters = container 
+      ? container.querySelectorAll('.stat-counter[data-target]')
+      : allCounters;
+    
+    counters.forEach(counter => {
+      if (countersStarted.has(counter)) return;
+      countersStarted.add(counter);
+      
+      const target = parseInt(counter.getAttribute('data-target'));
+      const duration = 2000;
+      const step = target / (duration / 16);
+      let current = 0;
 
-        const update = () => {
-          current += step;
-          if (current < target) {
-            counter.textContent = Math.floor(current).toLocaleString();
-            requestAnimationFrame(update);
-          } else {
-            counter.textContent = target.toLocaleString();
-          }
-        };
-        requestAnimationFrame(update);
-      });
-    }
+      const update = () => {
+        current += step;
+        if (current < target) {
+          counter.textContent = Math.floor(current).toLocaleString();
+          requestAnimationFrame(update);
+        } else {
+          counter.textContent = target.toLocaleString();
+        }
+      };
+      requestAnimationFrame(update);
+    });
   };
 
-  const heroStats = document.querySelector('.hero-stats');
-  if (heroStats && 'IntersectionObserver' in window) {
+  // Observe all tab-panel-visual sections for counter animation
+  const statSections = document.querySelectorAll('.tab-panel-visual, .inv-card:last-child');
+  if ('IntersectionObserver' in window) {
     const countObserver = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) startCounters();
-    }, { threshold: 0.5 });
-    countObserver.observe(heroStats);
+      entries.forEach(entry => {
+        if (entry.isIntersecting) startCounters(entry.target);
+      });
+    }, { threshold: 0.4 });
+    statSections.forEach(el => countObserver.observe(el));
   } else {
     startCounters();
   }
