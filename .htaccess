@@ -93,6 +93,22 @@ Sitemap: https://windekgroup.com/sitemap.xml
 AddType application/json .json
 AddType application/manifest+json .webmanifest
 AddType image/webp .webp
+AddType image/avif .avif
+
+# WebP support check for Apache
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_ACCEPT} image/webp
+  RewriteCond %{REQUEST_URI} \.(jpg|jpeg|png)$
+  RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME}.webp -f
+  RewriteRule ^(.*)\.(jpg|jpeg|png)$ $1\.$2\.webp [T=image/webp,E=accept:1]
+</IfModule>
+
+AddType application/javascript .js
+AddType text/javascript .js
+AddType application/manifest+json .json
+AddType text/cache-manifest .appcache
+AddType text/cache-manifest .manifest
 AddType font/woff2 .woff2
 AddType font/woff .woff
 

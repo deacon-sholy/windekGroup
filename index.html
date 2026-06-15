@@ -87,7 +87,10 @@
   <header class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-logo">
-        <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" fetchpriority="high" decoding="async" width="150" height="50" >
+        <picture>
+          <source srcset="img/Windek Group Logo.webp" type="image/webp">
+          <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" fetchpriority="high" decoding="async" width="150" height="50" >
+        </picture>
       </a>
       <nav class="nav-links" id="navLinks">
         <a href="#home" class="nav-link active">Home</a>
@@ -748,15 +751,21 @@
         <div class="team-grid reveal-up">
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/Emma.jpg" alt="Portrait of Emmanuel Uwandu" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              <picture>
+                <source srcset="img/Emma.webp" type="image/webp">
+                <img src="img/Emma.jpg" alt="Portrait of Emmanuel Uwandu" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              </picture>
             </div>
             <h3>Emmanuel Uwandu</h3>
             <span class="team-card__role">Chief Operating Officer</span>
-            <p>Over 10 years of experience in the Oil &amp; Gas sector, leading strategic operations and expansion.</p>
+            <p>Over 10 years of experience in the Oil & Gas sector, leading strategic operations and expansion.</p>
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/joy.jpg" alt="Portrait of Joy Makanjuola" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              <picture>
+                <source srcset="img/joy.webp" type="image/webp">
+                <img src="img/joy.jpg" alt="Portrait of Joy Makanjuola" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              </picture>
             </div>
             <h3>Joy Makanjuola</h3>
             <span class="team-card__role">Head of Human Resources</span>
@@ -764,7 +773,10 @@
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/dorcas.jpg" alt="Portrait of Dorcas Oloniyo" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              <picture>
+                <source srcset="img/dorcas.webp" type="image/webp">
+                <img src="img/dorcas.jpg" alt="Portrait of Dorcas Oloniyo" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              </picture>
             </div>
             <h3>Dorcas Oloniyo</h3>
             <span class="team-card__role">Head of Account</span>
@@ -772,18 +784,24 @@
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/motun.jpg" alt="Portrait of Motunrayo Adeogun" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              <picture>
+                <source srcset="img/motun.webp" type="image/webp">
+                <img src="img/motun.jpg" alt="Portrait of Motunrayo Adeogun" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              </picture>
             </div>
             <h3>Motunrayo Adeogun</h3>
-            <span class="team-card__role">Head of Business Development (Oil &amp; Gas)</span>
+            <span class="team-card__role">Head of Business Development (Oil & Gas)</span>
             <p>Driving growth strategies and managing stakeholder relationships across the energy value chain.</p>
           </article>
           <article class="team-card">
             <div class="team-card__media">
-              <img src="img/joyce.jpg" alt="Portrait of Joyce Sunmoye" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              <picture>
+                <source srcset="img/joyce.webp" type="image/webp">
+                <img src="img/joyce.jpg" alt="Portrait of Joyce Sunmoye" class="team-card__image" loading="lazy" decoding="async" width="300" height="320" >
+              </picture>
             </div>
             <h3>Joyce Sunmoye</h3>
-            <span class="team-card__role">Head of Business &amp; Contracts (Windek Fisheries/Procurement)</span>
+            <span class="team-card__role">Head of Business & Contracts (Windek Fisheries/Procurement)</span>
             <p>Specialist in government relations, bid management, and procurement strategy. She drives market expansion with competitive, compliant proposals.</p>
           </article>
           <!--
@@ -909,7 +927,10 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="#home" class="nav-logo footer-logo">
-            <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" loading="lazy" decoding="async" width="150" height="50" >
+            <picture>
+              <source srcset="img/Windek Group Logo.webp" type="image/webp">
+              <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" loading="lazy" decoding="async" width="150" height="50" >
+            </picture>
           </a>
           <p>Delivering Infrastructure, Energy &amp; Supply Chain Excellence across Nigeria and West Africa.</p>
           <div class="footer-socials">
@@ -957,5 +978,17 @@
   <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
   <script src="script.min.js?v=20260602" defer></script>
+  <!-- Service Worker for offline caching -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').then(reg => {
+          console.log('SW registered:', reg.scope);
+        }).catch(err => {
+          console.log('SW registration failed:', err);
+        });
+      });
+    }
+  </script>
 </body>
 </html>
