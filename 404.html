@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Windek Group</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#102749">
+  <style>
+    :root{--primary:#302b81;--primary-dark:#241f62;--secondary:#1284bf;--white:#FFFFFF;--font-display:'Playfair Display', Georgia, serif;--font-body:'Manrope', -apple-system, sans-serif}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-size:16px}
+    body{font-family:var(--font-body);background:linear-gradient(180deg,#071126 0%,#0b1b3f 100%);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;overflow-x:hidden}
+    .bg-grid{position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px;z-index:0}
+    .content{position:relative;z-index:1;max-width:540px}
+    .code{font-family:var(--font-display);font-size:clamp(5rem,15vw,10rem);font-weight:800;line-height:1;background:linear-gradient(135deg,#302b81,#1284bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+    .glow{font-family:var(--font-display);font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:12px}
+    p{color:rgba(255,255,255,.7);font-size:1.05rem;margin-bottom:32px;line-height:1.7}
+    .btn{display:inline-flex;align-items:center;padding:14px 32px;border-radius:4px;font-size:.92rem;font-weight:600;letter-spacing:.04em;text-decoration:none;cursor:pointer;background:#302b81;color:var(--white);border:2px solid #302b81;transition:all .35s ease}
+    .btn:hover{background:#241f62;border-color:#241f62}
+    .links{margin-top:24px;font-size:.88rem}
+    .links a{color:rgba(255,255,255,.5);text-decoration:none;margin:0 10px;transition:color .3s}
+    .links a:hover{color:var(--secondary)}
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="content">
+    <div class="code">404</div>
+    <h1 class="glow">Page Not Found</h1>
+    <p>The page you're looking for doesn't exist or has been moved.<br>Let's get you back on track.</p>
+    <a href="/" class="btn">← Back to Homepage</a>
+    <div class="links">
+      <a href="/#about">About</a>
+      <a href="/#subsidiaries">Subsidiaries</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </div>
+  <style>
+    /* Fallback if Google Fonts slow */
+    .code,.glow{font-family:'Playfair Display',Georgia,serif}
+    body,.btn{font-family:'Manrope',-apple-system,sans-serif}
+  </style>
+</body>
+</html>
