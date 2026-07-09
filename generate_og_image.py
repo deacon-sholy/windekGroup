@@ -55,7 +55,7 @@ except:
     font = ImageFont.load_default()
 
 # Title text
-title = "Energy Infrastructure,\nProcurement & Logistics"
+title = "Energy Infrastructure,\nLogistics & Fisheries"
 lines = title.split('\n')
 y_start = 220
 for i, line in enumerate(lines):

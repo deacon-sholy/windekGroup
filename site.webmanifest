@@ -1,12 +1,12 @@
 {
   "name": "Windek Group",
   "short_name": "Windek",
-  "description": "Windek Group delivers energy infrastructure, procurement, logistics, supply chain, and fisheries solutions in Nigeria.",
+  "description": "Windek Group delivers energy infrastructure, logistics, supply chain, and fisheries solutions in Nigeria.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#102749",
   "theme_color": "#102749",
-  "categories": ["energy", "logistics", "procurement", "infrastructure"],
+  "categories": ["energy", "logistics", "infrastructure", "fisheries"],
   "orientation": "portrait-primary",
   "lang": "en-NG",
   "icons": [
