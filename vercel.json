@@ -35,15 +35,5 @@
         { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
       ]
     }
-  ],
-  "redirects": [
-    {
-      "source": "/:path*",
-      "has": [
-        { "type": "host", "value": "www.windekgroup.com" }
-      ],
-      "destination": "https://windekgroup.com/:path*",
-      "permanent": true
-    }
   ]
 }
