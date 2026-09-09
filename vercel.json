@@ -2,8 +2,33 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/(.*)\\.(css|js)$",
       "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|ico|svg)$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(woff|woff2|ttf|otf|eot)$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(html|htm)$",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" },
         { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
@@ -12,27 +37,13 @@
       ]
     },
     {
-      "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|ico|svg)$",
+      "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000, immutable" }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(css|js)$",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(woff|woff2|ttf|otf|eot)$",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(html|htm)$",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=3600, must-revalidate" }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Cross-Origin-Opener-Policy", "value": "same-origin" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; form-action 'self' https://formsubmit.co; frame-src https://www.google.com; frame-ancestors 'none'; object-src 'none'; base-uri 'self'" }
       ]
     }
   ]
