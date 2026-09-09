@@ -2,6 +2,10 @@
 
 This project is a static corporate website built for Windek Group Limited.
 
+## Deployment
+
+This site is deployed on Vercel (`windek-group` project, production domain `https://windekgroup.com`). Pushes to the `main` branch are intended to trigger automatic production deployments.
+
 It presents the company's brand, subsidiaries, leadership team, investor positioning, contact details, and supporting business information in a modern responsive layout.
 
 ## Author
