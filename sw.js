@@ -1,5 +1,5 @@
 // Windek Group - Service Worker v1.0
-const CACHE_NAME = 'windek-cache-v1';
+const CACHE_NAME = 'windek-cache-v2';
 
 // Assets to pre-cache on install
 const PRECACHE_URLS = [
