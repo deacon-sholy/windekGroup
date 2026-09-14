@@ -947,7 +947,7 @@ img, svg {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(7,17,38,0.25) 0%, rgba(7,17,38,0.8) 100%);
+  background: linear-gradient(180deg, rgba(7,17,38,0.3) 0%, rgba(7,17,38,0.82) 100%);
 }
 .tab-panel-visual .visual-stat-cards { position: relative; z-index: 2; }
 .energy-visual { background: linear-gradient(135deg, #0B1F3A, #1a3a6b); }
@@ -956,16 +956,17 @@ img, svg {
 .visual-icon-large { font-size: 4rem; filter: drop-shadow(0 0 20px rgba(244,123,32,0.4)); }
 .visual-stat-cards { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; width: 100%; }
 .v-stat {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(7, 17, 38, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: var(--radius-sm);
-  padding: 14px 18px;
+  padding: 16px 18px;
   text-align: center;
   flex: 1; min-width: 80px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 24px rgba(4, 10, 25, 0.35);
 }
-.v-stat strong { display: block; font-family: var(--font-display); font-size: 1.2rem; color: var(--orange); font-weight: 700; }
-.v-stat span { display: block; font-size: 0.72rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
+.v-stat strong { display: block; font-family: var(--font-display); font-size: 1.35rem; color: #ffffff; font-weight: 700; text-shadow: 0 1px 4px rgba(4, 10, 25, 0.6); }
+.v-stat span { display: block; font-size: 0.74rem; color: rgba(255, 255, 255, 0.78); font-weight: 600; margin-top: 4px; letter-spacing: 0.02em; }
 
 /* ===== PROJECTS ===== */
 .projects-section { background: var(--white); }
