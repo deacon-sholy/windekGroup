@@ -6,3 +6,9 @@ Desktop.ini
 .idea/
 .vercel
 .env*
+
+# Build tooling
+node_modules/
+
+# Raw image sources (downloaded originals before webp optimization)
+img/_src/

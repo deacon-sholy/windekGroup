@@ -7,7 +7,11 @@
   <meta name="description" content="Windek Group is a Nigerian industrial group delivering energy infrastructure, logistics, supply chain, and fisheries solutions for public and private sector clients." >
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" >
   <meta name="author" content="Windek Group" >
-  <meta name="theme-color" content="#102749" >
+  <meta name="theme-color" content="#102749" media="(prefers-color-scheme: light)" >
+  <meta name="theme-color" content="#0a1322" media="(prefers-color-scheme: dark)" >
+  <script>
+    (function(){try{var s=localStorage.getItem('windek-theme');if(s!=='dark'&&s!=='light')s=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',s);}catch(e){document.documentElement.setAttribute('data-theme','light');}})();
+  </script>
   <link rel="canonical" href="https://windekgroup.com/" >
   <link rel="alternate" hreflang="en-ng" href="https://windekgroup.com/" >
   <link rel="icon" type="image/png" sizes="256x256" href="img/favicon-white.png?v=3" >
@@ -77,16 +81,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" >
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
   <link rel="preload" as="image" href="img/Windek%20Group%20Logo.png" fetchpriority="high" >
-  <link rel="preload" as="image" href="img/slide-oil.svg" fetchpriority="high" >
+  <link rel="preload" as="image" href="img/hero-oil.webp" fetchpriority="high" >
   <link rel="preconnect" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" >
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'" >
   <style>
     :root{--primary:#302b81;--primary-dark:#241f62;--primary-light:#4b44a4;--secondary:#1284bf;--secondary-light:#2ea3df;--secondary-dark:#0d6998;--navy:var(--primary-dark);--navy-mid:var(--primary);--navy-light:var(--primary-light);--orange:var(--secondary);--orange-light:var(--secondary-light);--orange-dark:var(--secondary-dark);--white:#FFFFFF;--off-white:#F5F7FA;--grey-light:#E8EDF4;--grey:#6B7280;--text-body:#374151;--text-dark:var(--primary-dark);--font-display:'Playfair Display', Georgia, serif;--font-body:'Manrope', -apple-system, sans-serif;--radius:12px;--radius-sm:6px;--shadow:0 8px 32px rgba(36,31,98,0.10);--shadow-lg:0 20px 60px rgba(36,31,98,0.18);--transition:all 0.35s cubic-bezier(0.4, 0, 0.2, 1)}*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;font-size:16px}body{font-family:var(--font-body);color:var(--text-body);background:var(--white);overflow-x:hidden;line-height:1.7}img,svg{max-width:100%;height:auto}.container{max-width:1220px;margin:0 auto;padding:0 24px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.section{padding:100px 0}.section,.cta-banner,.footer{content-visibility:auto;contain-intrinsic-size:1px 720px}.section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;position:relative;padding-left:28px}.section-label::before{content:'';position:absolute;left:0;top:50%;transform:translateY(-50%);width:18px;height:2px;background:var(--orange)}.section-label.light{color:var(--orange-light)}.section-label.light::before{background:var(--orange-light)}.section-title{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--navy);line-height:1.22;margin-bottom:20px}.section-title.light{color:var(--white)}.section-sub{font-size:1.05rem;color:var(--grey);max-width:620px}.section-sub.light{color:rgba(255,255,255,.7)}.section-header{margin-bottom:60px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 32px;border-radius:4px;font-family:var(--font-body);font-size:.92rem;font-weight:600;letter-spacing:.04em;text-decoration:none;cursor:pointer;border:2px solid transparent;transition:var(--transition);white-space:nowrap}.btn--primary{background:var(--primary);color:var(--white);border-color:var(--primary)}.btn--primary:hover{background:var(--primary-dark);border-color:var(--primary-dark)}.btn--ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.35)}.btn--ghost:hover{border-color:var(--white)}.btn--white{background:var(--white);color:var(--navy);border-color:var(--white)}.btn--outline-white{background:transparent;color:var(--white);border-color:rgba(255,255,255,.35)}.btn--outline-white:hover{background:var(--white);color:var(--navy)}.btn--sm{padding:10px 22px;font-size:.85rem}.btn--full{width:100%}.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:transparent;transition:background .4s ease,box-shadow .4s ease,padding .4s ease;padding:8px 0}.navbar.scrolled{background:rgba(11,31,58,.97);backdrop-filter:blur(12px);box-shadow:0 2px 24px rgba(0,0,0,.22);padding:4px 0}.nav-container{max-width:1220px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:70px}.nav-logo{display:flex;align-items:center;justify-content:center;padding:8px 14px;border-radius:18px;background:rgba(255,255,255,.96);box-shadow:0 10px 30px rgba(8,16,38,.18);text-decoration:none}.brand-logo-image{display:block;width:auto;height:50px;object-fit:contain}.subsidiary-slider{min-height:78vh;background:linear-gradient(180deg,#071126 0%,#0b1b3f 100%);display:flex;align-items:center;position:relative;overflow:hidden;padding:104px 0 48px}.hero-slider__viewport{width:100%;position:relative;z-index:2}.hero-container{width:100%;max-width:1220px;margin:0 auto;padding:0 24px;position:relative;z-index:2}.hero-slider__track{display:flex;transition:transform .65s ease;will-change:transform}.hero-slide{min-width:100%;display:flex;align-items:flex-end;min-height:56vh;padding:34px;border-radius:30px;border:1px solid rgba(255,255,255,.12);box-shadow:0 34px 90px rgba(4,10,25,.38);position:relative;overflow:hidden}.hero-slide h2{font-family:var(--font-display);font-size:clamp(2.4rem,5.4vw,4.5rem);color:var(--white);line-height:.98;margin-bottom:18px;max-width:11ch;letter-spacing:0}.hero-slide__content{position:relative;z-index:2;width:100%}.hero-slide__tag{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:8px;padding:5px 14px;border:1px solid rgba(255,255,255,.15);border-radius:30px;backdrop-filter:blur(6px)}.hero-slide p{color:rgba(255,255,255,.78);font-size:1.1rem;max-width:54ch;margin-bottom:28px;line-height:1.6}.hero-slide__actions{display:flex;flex-wrap:wrap;gap:12px}.hero-slide__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;z-index:0}.hero-slider__controls{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:28px;position:relative;z-index:5}.hero-slider__arrow{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.18);color:var(--white);font-size:1.8rem;width:46px;height:46px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.3s}.hero-slider__arrow:hover{background:rgba(255,255,255,.15)}.hero-slider__dots{display:flex;gap:10px}.hero-slider__dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,.2);border:none;cursor:pointer;transition:.3s;padding:0}.hero-slider__dot.active{background:var(--orange);width:30px;border-radius:6px}.hero-slide__title-accent{color:var(--orange)}.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;z-index:0}.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(11,31,58,.97);backdrop-filter:blur(12px);padding:16px 24px;display:none;border-top:2px solid rgba(255,255,255,.08)}.cookie-banner__content{max-width:1220px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.cookie-banner__text{display:flex;align-items:center;gap:10px;flex-wrap:wrap;color:rgba(255,255,255,.85);font-size:.88rem;line-height:1.5}.cookie-banner__text strong{color:var(--white)}.cookie-banner__text a{color:var(--secondary);text-decoration:underline}.cookie-banner__text a:hover{color:var(--secondary-light)}.cookie-banner__actions{display:flex;gap:8px;flex-shrink:0}
   </style>
-  <link rel="stylesheet" href="style.min.css?v=20260909" media="print" onload="this.media='all'" >
+  <link rel="stylesheet" href="style.min.css?v=20260914c" media="print" onload="this.media='all'" >
   <noscript>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" >
-    <link rel="stylesheet" href="style.min.css?v=20260909" >
+    <link rel="stylesheet" href="style.min.css?v=20260914c" >
   </noscript>
 </head>
 <body>
@@ -96,8 +100,8 @@
     <div class="nav-container">
       <a href="#home" class="nav-logo">
         <picture>
-          <source srcset="img/Windek Group Logo.webp" type="image/webp">
-          <img src="img/Windek Group Logo.png" alt="Windek Group logo" class="brand-logo-image" fetchpriority="high" decoding="async" width="150" height="50" >
+          <source srcset="img/Windek%20Group%20Logo.webp" type="image/webp">
+          <img src="img/Windek%20Group%20Logo.png" alt="Windek Group logo" class="brand-logo-image" fetchpriority="high" decoding="async" width="150" height="50" >
         </picture>
       </a>
       <nav class="nav-links" id="navLinks">
@@ -109,6 +113,10 @@
         <a href="#investors" class="nav-link">Investors</a>
         <a href="#contact" class="nav-link nav-cta">Contact Us</a>
       </nav>
+      <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" aria-pressed="false" >
+        <span class="theme-toggle__moon" aria-hidden="true">☾</span>
+        <span class="theme-toggle__sun" aria-hidden="true">☀</span>
+      </button>
       <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
@@ -129,7 +137,7 @@
         <section class="hero-slider__viewport reveal-up" aria-label="Windek Group subsidiaries slider">
           <div class="hero-slider__track" id="heroSliderTrack">
             <article class="hero-slide hero-slide--oil active" data-slide="0">
-              <img src="img/slide-oil.svg" alt="Oil and gas infrastructure background" class="hero-slide__bg" fetchpriority="high" decoding="async" width="800" height="600" >
+              <img src="img/hero-oil.webp" alt="Oil and gas infrastructure background" class="hero-slide__bg" fetchpriority="high" decoding="async" width="1600" height="900" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Premium Indigenous Energy</span>
                 <h2><span>Fueling Reliable</span><span class="hero-slide__title-accent">Gas Infrastructure.</span></h2>
@@ -142,7 +150,7 @@
             </article>
 
             <article class="hero-slide hero-slide--energy" data-slide="1">
-              <img src="img/slide-energy.svg" alt="Energy operations background" class="hero-slide__bg" loading="lazy" decoding="async" width="800" height="600" >
+              <img src="img/hero-energy.webp" alt="Solar energy plant background" class="hero-slide__bg" decoding="async" width="1600" height="900" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Smart Energy Delivery</span>
                 <h2><span>Driving Modern</span><span class="hero-slide__title-accent">Energy Solutions.</span></h2>
@@ -155,7 +163,7 @@
             </article>
 
             <article class="hero-slide hero-slide--logistics" data-slide="2">
-              <img src="img/slide-logistics.svg" alt="Logistics operations background" class="hero-slide__bg" loading="lazy" decoding="async" width="800" height="600" >
+              <img src="img/hero-logistics.webp" alt="Shipping port and container terminal background" class="hero-slide__bg" decoding="async" width="1600" height="900" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Supply Chain Movement</span>
                 <h2><span>Moving Goods.</span><span class="hero-slide__title-accent">Powering Operations.</span></h2>
@@ -168,7 +176,7 @@
             </article>
 
             <article class="hero-slide hero-slide--fisheries" data-slide="3">
-              <img src="img/slide-fisheries.svg" alt="Fisheries distribution background" class="hero-slide__bg" loading="lazy" decoding="async" width="800" height="600" >
+              <img src="img/hero-fisheries.webp" alt="Fish market and seafood distribution background" class="hero-slide__bg" decoding="async" width="1600" height="900" >
               <div class="hero-slide__content">
                 <span class="hero-slide__tag">Cold Chain Distribution</span>
                 <h2><span>Supplying Quality.</span><span class="hero-slide__title-accent">Serving Demand.</span></h2>
@@ -207,7 +215,19 @@
         <span>LPG Storage &amp; Distribution</span><span class="dot">*</span>
         <span>Cold Chain Logistics</span><span class="dot">*</span>
         <span>Fish Supply Chain</span><span class="dot">*</span>
-        <span>Clean Energy Solutions</span><span class="dot">*</span>
+<span>Clean Energy Solutions</span><span class="dot">*</span>
+      </div>
+    </div>
+
+    <!-- ===== STATS STRIP ===== -->
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-grid reveal-up">
+          <div class="stat-item"><strong><span class="stat-counter" data-target="20000">0</span>MT+</strong><span>LPG Storage Capacity</span></div>
+          <div class="stat-item"><strong><span class="stat-counter" data-target="36">0</span></strong><span>States Covered</span></div>
+          <div class="stat-item"><strong><span class="stat-counter" data-target="500000">0</span>+</strong><span>Beneficiaries Served</span></div>
+          <div class="stat-item"><strong><span class="stat-counter" data-target="15">0</span>+</strong><span>Years of Excellence</span></div>
+        </div>
       </div>
     </div>
 
@@ -218,16 +238,7 @@
           <div class="about-visual reveal-left">
             <div class="about-img-block">
               <div class="about-img-placeholder">
-                <div class="about-img-inner">
-                  <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="120" width="40" height="60" fill="#F47B20" opacity="0.8"/>
-                    <rect x="70" y="80" width="40" height="100" fill="#1a3a6b" opacity="0.9"/>
-                    <rect x="120" y="50" width="60" height="130" fill="#1a3a6b"/>
-                    <rect x="130" y="30" width="10" height="25" fill="#F47B20"/>
-                    <circle cx="135" cy="25" r="6" fill="#F47B20" opacity="0.7"/>
-                    <rect x="0" y="178" width="200" height="4" fill="#F47B20"/>
-                  </svg>
-                </div>
+                <img src="img/about.webp" alt="Windek Group corporate offices" class="about-photo" loading="lazy" decoding="async" width="1000" height="750">
               </div>
               <div class="about-badge-card">
                 <span class="about-badge-icon">🏆</span>
@@ -339,7 +350,7 @@
                   <a href="https://www.windekoilandgasltd.com/" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Visit Oil &amp; Gas Division</a>
                 </div>
                 <div class="tab-panel-visual energy-visual">
-                  <div class="visual-icon-large">⚡</div>
+                  <img src="img/div-oilgas.webp" alt="Gas storage facility" class="tab-panel-visual__photo" loading="lazy" decoding="async" width="1200" height="900">
                   <div class="visual-stat-cards">
                     <div class="v-stat"><strong class="stat-counter" data-target="20000">0</strong><span>MT Storage Capacity</span></div>
                     <div class="v-stat"><strong>DPR</strong><span>Licensed</span></div>
@@ -364,7 +375,7 @@
                   <a href="https://windekenergyltd.com/" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Visit Windek Energy</a>
                 </div>
                 <div class="tab-panel-visual energy-visual">
-                  <div class="visual-icon-large">⚡</div>
+                  <img src="img/div-energy.webp" alt="Industrial storage tanks" class="tab-panel-visual__photo" decoding="async" width="1200" height="900">
                   <div class="visual-stat-cards">
                     <div class="v-stat"><strong>Energy</strong><span>Solutions</span></div>
                     <div class="v-stat"><strong>Project</strong><span>Focused</span></div>
@@ -390,7 +401,7 @@
                   <a href="#operations" class="btn btn--primary btn--sm">Visit Website</a>
                 </div>
                 <div class="tab-panel-visual logistics-visual">
-                  <div class="visual-icon-large">🚛</div>
+                  <img src="img/div-logistics.webp" alt="Warehouse logistics operations" class="tab-panel-visual__photo" decoding="async" width="1200" height="900">
                   <div class="visual-stat-cards">
                     <div class="v-stat"><strong><span class="stat-counter" data-target="36">0</span></strong><span>States</span></div>
                     <div class="v-stat"><strong>Cold</strong><span>Chain Ready</span></div>
@@ -415,7 +426,7 @@
                   <a href="https://windekfisheries.com/" class="btn btn--primary btn--sm" target="_blank" rel="noopener noreferrer">Visit Windek Fisheries</a>
                 </div>
                 <div class="tab-panel-visual food-visual">
-                  <div class="visual-icon-large">🐟</div>
+                  <img src="img/div-food.webp" alt="Fresh fish distribution market" class="tab-panel-visual__photo" decoding="async" width="1200" height="900">
                   <div class="visual-stat-cards">
                     <div class="v-stat"><strong>Cold</strong><span>Chain Enabled</span></div>
                     <div class="v-stat"><strong>B2B</strong><span>Institutional</span></div>
@@ -449,6 +460,7 @@
 
           <div class="project-card" data-category="energy" data-title="LPG Storage Terminal — Port Harcourt" data-desc="Development and commissioning of a 20,000MT LPG storage terminal in Port Harcourt, serving industrial and household distribution networks across Southwest Nigeria. The facility is DPR licensed and equipped with state-of-the-art safety systems." data-tags="Energy, Infrastructure, LPG">
             <div class="project-card__img energy-bg">
+              <img src="img/div-oilgas.webp" alt="LPG storage terminal" class="project-card__photo" loading="lazy" decoding="async" width="900" height="450">
               <div class="project-card__icon">⚡</div>
               <div class="project-card__overlay"><span>View Details</span></div>
             </div>
@@ -462,6 +474,7 @@
 
           <div class="project-card" data-category="logistics" data-title="National Cold Chain Distribution Network" data-desc="Establishment of a nationwide cold chain logistics network with refrigerated warehouses in Port Harcourt, Abuja, and Port Harcourt. The network serves fish processors, seafood distributors, pharmaceutical companies, and government agencies with temperature-controlled distribution." data-tags="Logistics, Cold Chain, Distribution">
             <div class="project-card__img logistics-bg">
+              <img src="img/proj-coldchain.webp" alt="Cold chain warehouse operations" class="project-card__photo" loading="lazy" decoding="async" width="900" height="450">
               <div class="project-card__icon">🚛</div>
               <div class="project-card__overlay"><span>View Details</span></div>
             </div>
@@ -476,6 +489,7 @@
 
           <div class="project-card" data-category="food" data-title="Strategic Fish Supply Program" data-desc="Partnership with state government agencies and institutional buyers to manage strategic fish supply programs, including seafood sourcing, cold storage, and distribution across multiple states. Serving over 500,000 beneficiaries and end users." data-tags="Fish, Government, Distribution">
             <div class="project-card__img food-bg">
+              <img src="img/proj-fish.webp" alt="Strategic fish supply program" class="project-card__photo" loading="lazy" decoding="async" width="900" height="450">
               <div class="project-card__icon">🐟</div>
               <div class="project-card__overlay"><span>View Details</span></div>
             </div>
@@ -489,6 +503,7 @@
 
           <div class="project-card" data-category="energy" data-title="Clean Energy Pilot Project — Kano" data-desc="Development of a solar-hybrid energy solution for an industrial park in Kano, providing reliable and sustainable power to 200+ small and medium enterprises. Phase 2 expansion currently under development." data-tags="Energy, Clean Energy, Solar">
             <div class="project-card__img energy-bg">
+              <img src="img/proj-solar.webp" alt="Solar hybrid energy pilot project" class="project-card__photo" loading="lazy" decoding="async" width="900" height="450">
               <div class="project-card__icon">☀️</div>
               <div class="project-card__overlay"><span>View Details</span></div>
             </div>
@@ -502,6 +517,7 @@
 
           <div class="project-card" data-category="logistics" data-title="Oil &amp; Gas Equipment Freight — Rivers State" data-desc="Specialized freight and logistics management for oil field equipment across Rivers State and the Niger Delta region. Includes oversize cargo haulage, HSSEQ compliance, and last-mile delivery to offshore staging areas." data-tags="Logistics, Oil &amp; Gas, Freight">
             <div class="project-card__img logistics-bg">
+              <img src="img/proj-freight.webp" alt="Oil field equipment freight logistics" class="project-card__photo" loading="lazy" decoding="async" width="900" height="450">
               <div class="project-card__icon">🛢️</div>
               <div class="project-card__overlay"><span>View Details</span></div>
             </div>
@@ -518,8 +534,8 @@
     </section>
 
     <!-- Project Modal -->
-    <div class="modal-overlay" id="projectModal">
-      <div class="modal-box">
+    <div class="modal-overlay" id="projectModal" aria-hidden="true">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <button type="button" class="modal-close" id="modalClose">✕</button>
         <div class="modal-tag" id="modalTag"></div>
         <h3 class="modal-title" id="modalTitle">Project details</h3>
@@ -737,16 +753,6 @@
             <span class="team-card__role">Head of Business & Contracts</span>
             <p>Specialist in government relations, bid management, and contract strategy. She drives market expansion with competitive, compliant proposals.</p>
           </article>
-          <!--
-          <article class="team-card">
-            <div class="team-card__media">
-              <img src="img/team-tunde-salami.svg" alt="Portrait of Tunde Salami" class="team-card__image" width="300" height="320" >
-            </div>
-            <h3>Tunde Salami</h3>
-            <span class="team-card__role">Operations Director</span>
-            <p>Ensures operational discipline, delivery quality, and aligned execution across subsidiaries.</p>
-          </article>
-          -->
         </div>
       </div>
     </section>
@@ -790,9 +796,8 @@
           <div class="contact-form-wrap reveal-right">
             <form class="contact-form" id="contactForm" action="https://formsubmit.co/info@windekgroup.com" method="POST" novalidate>
               <input type="hidden" name="_subject" value="New Windek Group Website Enquiry" >
-              <input type="hidden" name="_captcha" value="false" >
               <input type="hidden" name="_template" value="table" >
-              <input type="hidden" name="_next" id="formNextUrl" value="" >
+              <input type="text" name="website_confirm" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" >
               <h3>Send Us a Message</h3>
               <div class="form-row">
                 <div class="form-group">
@@ -842,16 +847,7 @@
       </div>
     </section>
 
-    <div class="modal-overlay success-modal" id="formSuccessModal">
-      <div class="modal-box success-modal__box">
-        <div class="success-modal__badge">✓</div>
-        <div class="modal-tag">Message Sent</div>
-        <h3 class="modal-title">Thank you for reaching out.</h3>
-        <p class="modal-desc">Your message was submitted successfully. Redirecting you to the home page in 3 seconds.</p>
-      </div>
-    </div>
-
-  </main>
+    </main>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -908,6 +904,17 @@
   <!-- Back to top -->
   <button type="button" class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
+  <!-- WhatsApp -->
+  <a class="whatsapp-float" href="https://wa.me/2348085269328?text=Hello%20Windek%20Group%2C%20I%27d%20like%20to%20make%20an%20enquiry." target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.88 14.45c-.3-.15-1.78-.88-2.06-.98-.28-.1-.48-.15-.68.15-.2.3-.78.98-.96 1.18-.18.2-.35.22-.65.07-.3-.15-1.27-.47-2.41-1.49-.9-.8-1.5-1.8-1.68-2.1-.18-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.38-.03-.53-.07-.15-.68-1.63-.93-2.23-.24-.58-.5-.5-.68-.51h-.58c-.2 0-.53.08-.8.38-.28.3-1.05 1.02-1.05 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.1 4.49.71.3 1.27.49 1.7.63.72.22 1.37.19 1.88.12.58-.09 1.78-.73 2.03-1.43.25-.7.25-1.3.18-1.43-.07-.12-.28-.2-.58-.34ZM16.06 1.8C8.42 1.8 2.2 8.02 2.2 15.66c0 2.44.64 4.83 1.85 6.92L2.3 28.2l5.78-1.7a13.8 13.8 0 0 0 7.98 2.44c7.64 0 13.86-6.22 13.86-13.86 0-3.7-1.44-7.18-4.06-9.8A13.8 13.8 0 0 0 16.06 1.8Z"/></svg>
+  </a>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <!-- Toast stack -->
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="false"></div>
+
   <!-- Cookie Consent Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-banner__content">
@@ -922,8 +929,8 @@
     </div>
   </div>
 
-  <script src="script.min.js?v=20260909" defer></script>
-  <!-- Service Worker & Cookie Banner -->
+  <script src="script.min.js?v=20260914c" defer></script>
+  <!-- Service Worker -->
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -934,24 +941,6 @@
         });
       });
     }
-    document.addEventListener('DOMContentLoaded', function() {
-      var banner = document.getElementById('cookieBanner');
-      var acceptBtn = document.getElementById('cookieAccept');
-      var declineBtn = document.getElementById('cookieDecline');
-      if (!banner || localStorage.getItem('cookieConsent') !== null) {
-        if (banner) banner.style.display = 'none';
-        return;
-      }
-      banner.style.display = 'block';
-      acceptBtn?.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'accepted');
-        banner.style.display = 'none';
-      });
-      declineBtn?.addEventListener('click', function() {
-        localStorage.setItem('cookieConsent', 'declined');
-        banner.style.display = 'none';
-      });
-    });
   </script>
 </body>
 </html>

@@ -1,0 +1,16 @@
+{
+  "name": "windek-group-site",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Windek Group corporate website (static HTML/CSS/JS).",
+  "scripts": {
+    "build": "node build.js",
+    "minify": "node build.js"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "puppeteer-core": "^25.11.0",
+    "sharp": "^0.35.4",
+    "terser": "^5.36.0"
+  }
+}
