@@ -1400,12 +1400,12 @@ img, svg {
 .footer-brand p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.75; margin-bottom: 24px; }
 .footer-socials { display: flex; gap: 10px; flex-wrap: wrap; }
 .social-link {
-  min-height: 42px;
-  padding: 8px 12px 8px 8px;
+  width: 42px;
+  height: 42px;
+  padding: 0;
   border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 999px;
+  border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px;
   color: rgba(255,255,255,0.72);
   font-size: 0.8rem; font-weight: 700;
   text-decoration: none;
@@ -1423,10 +1423,6 @@ img, svg {
   color: var(--white);
   font-size: 0.82rem;
   flex-shrink: 0;
-}
-.social-link__label {
-  line-height: 1;
-  white-space: nowrap;
 }
 .social-link:hover {
   background: rgba(18,132,191,0.18);
